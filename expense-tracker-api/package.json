@@ -1,0 +1,26 @@
+{
+    "name": "expense-tracker-api",
+    "version": "1.0.0",
+    "description": "RESTful API for an expense tracker",
+    "main": "server.js",
+    "type": "module",
+    "scripts": {
+        "start": "node server.js",
+        "dev": "node --watch server.js"
+    },
+    "keywords": [
+        "api",
+        "rest",
+        "expenses",
+        "auth",
+        "jwt"
+    ],
+    "author": "ADA",
+    "license": "MIT",
+    "dependencies": {
+        "bcrypt": "^6.0.0",
+        "better-sqlite3": "^13.0.3",
+        "express": "^5.2.1",
+        "jsonwebtoken": "^9.0.3"
+    }
+}

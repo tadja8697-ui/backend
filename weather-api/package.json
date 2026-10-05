@@ -1,0 +1,25 @@
+{
+    "name": "weather-api",
+    "version": "1.0.0",
+    "description": "Weather API with Redis caching",
+    "main": "server.js",
+    "type": "module",
+    "scripts": {
+        "start": "node server.js",
+        "dev": "node --watch server.js"
+    },
+    "keywords": [
+        "api",
+        "weather",
+        "redis",
+        "cache"
+    ],
+    "author": "ADA",
+    "license": "MIT",
+    "dependencies": {
+        "axios": "^1.20.0",
+        "express": "^5.2.1",
+        "express-rate-limit": "^8.7.0",
+        "redis": "^6.3.0"
+    }
+}

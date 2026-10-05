@@ -1,0 +1,14 @@
+{
+    "name": "personal-blog",
+    "version": "1.0.0",
+    "description": "A personal blog with SSR",
+    "main": "server.js",
+    "type": "module",
+    "scripts": {
+        "start": "node server.js",
+        "dev": "node --watch server.js"
+    },
+    "keywords": ["blog", "express", "ssr"],
+    "author": "ADA",
+    "license": "MIT"
+}

@@ -1,0 +1,14 @@
+{
+    "name": "todo-api",
+    "version": "1.0.0",
+    "description": "RESTful API for a todo list with authentication",
+    "main": "server.js",
+    "type": "module",
+    "scripts": {
+        "start": "node server.js",
+        "dev": "node --watch server.js"
+    },
+    "keywords": ["api", "rest", "todo", "auth", "jwt"],
+    "author": "ada Raoulyne",
+    "license": "MIT"
+}

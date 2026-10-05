@@ -1,0 +1,16 @@
+{
+    "name": "task-cli",
+    "version": "1.0.0",
+    "description": "A simple CLI to track your tasks",
+    "main": "index.js",
+    "bin": {
+        "task-cli": "./index.js"
+    },
+    "type": "module",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "keywords": ["cli", "task", "todo"],
+    "author": "ADA",
+    "license": "MIT"
+}

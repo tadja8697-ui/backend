@@ -1,0 +1,19 @@
+{
+    "name": "tmdb-cli",
+    "version": "1.0.0",
+    "description": "CLI to browse movies from TMDB",
+    "main": "index.js",
+    "bin": {
+        "tmdb-app": "./index.js"
+    },
+    "type": "module",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "keywords": ["cli", "tmdb", "movies"],
+    "author": "ADA",
+    "license": "MIT"
+}

@@ -1,0 +1,35 @@
+node_modules/
+.caching-proxy-cache/
+.DS_Store
+*.loggithub-trending-cli/.env
+
+# Dépendances
+node_modules/
+
+# Variables d'environnement (SECRETS)
+.env
+.env.*
+*.env
+!.env.example
+
+# Base de données locales
+*.db
+*.db-journal
+data/*.db
+data/*.db-journal
+
+# Cache
+.caching-proxy-cache/
+highscores.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Build
+dist/
+build/

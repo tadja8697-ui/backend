@@ -1,0 +1,238 @@
+/* ============================================================
+   1. RESET & VARIABLES
+   ============================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-text: #1a1a1a;
+    --color-text-muted: #6b7280;
+    --color-bg: #ffffff;
+    --color-bg-page: #f9fafb;
+    --color-border: #1a1a1a;
+    --color-border-light: #e5e7eb;
+    --color-accent: #2563eb;
+    --color-accent-hover: #1d4ed8;
+    --color-error: #dc2626;
+    --color-error-bg: #fee2e2;
+    --color-btn: #0a0a0a;
+    --color-btn-hover: #262626;
+    --color-focus: #2563eb;
+
+    --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+
+    --radius: 8px;
+}
+
+/* ============================================================
+   2. BASE
+   ============================================================ */
+
+body {
+    font-family: var(--font-main);
+    color: var(--color-text);
+    background-color: var(--color-bg-page);
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: var(--space-xl) var(--space-md);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.page {
+    width: 100%;
+    max-width: 480px;
+    background-color: var(--color-bg);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: var(--space-xl);
+}
+
+.title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: var(--space-lg);
+}
+
+/* ============================================================
+   3. TABS
+   ============================================================ */
+
+.tabs {
+    display: flex;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.tab {
+    padding: var(--space-sm) 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.tab:hover {
+    color: var(--color-text);
+}
+
+.tab.is-active {
+    color: var(--color-accent);
+}
+
+.tab.is-active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 2px;
+    background-color: var(--color-accent);
+}
+
+.tab:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+    border-radius: 4px;
+}
+
+/* ============================================================
+   4. FORMULAIRE
+   ============================================================ */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.field-label {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-sm);
+}
+
+.field-input,
+.field-select {
+    width: 100%;
+    padding: 0.75rem var(--space-md);
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius);
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.field-input:focus-visible,
+.field-select:focus-visible {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+.field-select {
+    cursor: pointer;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: var(--space-lg);
+    padding: 0.75rem var(--space-lg);
+
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+
+    background-color: var(--color-btn);
+    border: 2px solid var(--color-btn);
+    border-radius: var(--radius);
+    cursor: pointer;
+
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn:hover {
+    background-color: var(--color-btn-hover);
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.5);
+}
+
+/* ============================================================
+   5. RÉSULTAT
+   ============================================================ */
+
+.result {
+    display: flex;
+    flex-direction: column;
+}
+
+.result-label {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: var(--space-lg);
+}
+
+.result-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text);
+    padding: var(--space-md) 0;
+    border-bottom: 2px solid var(--color-border-light);
+    word-break: break-word;
+}
+
+.result-error {
+    padding: var(--space-md);
+    background-color: var(--color-error-bg);
+    color: var(--color-error);
+    border-radius: var(--radius);
+    font-weight: 500;
+}
+
+/* ============================================================
+   6. RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 480px) {
+    .page {
+        padding: var(--space-lg);
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .tabs {
+        gap: var(--space-md);
+    }
+
+    .result-value {
+        font-size: 1.25rem;
+    }
+}

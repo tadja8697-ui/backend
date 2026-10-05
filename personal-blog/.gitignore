@@ -1,0 +1,4 @@
+node_modules/
+.caching-proxy-cache/
+.DS_Store
+*.log

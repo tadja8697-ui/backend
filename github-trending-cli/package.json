@@ -1,0 +1,19 @@
+{
+    "name": "trending-repos",
+    "version": "1.0.0",
+    "description": "GitHub Trending Repositories CLI",
+    "main": "index.js",
+    "bin": {
+        "trending-repos": "./index.js"
+    },
+    "type": "module",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "keywords": ["cli", "github", "trending", "repos"],
+    "author": "ADA",
+    "license": "MIT"
+}

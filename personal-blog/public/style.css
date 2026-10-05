@@ -1,0 +1,375 @@
+/* ============================================================
+   1. RESET & VARIABLES
+   ============================================================ */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --color-text: #1a1a1a;
+    --color-text-muted: #6b7280;
+    --color-bg: #ffffff;
+    --color-bg-page: #f9fafb;
+    --color-border: #1a1a1a;
+    --color-border-light: #e5e7eb;
+    --color-accent: #2563eb;
+    --color-accent-hover: #1d4ed8;
+    --color-danger: #dc2626;
+    --color-error-bg: #fee2e2;
+    --color-btn: #0a0a0a;
+    --color-btn-hover: #262626;
+
+    --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+
+    --radius: 8px;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--color-text);
+    background-color: var(--color-bg-page);
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: var(--space-xl) var(--space-md);
+}
+
+.page {
+    max-width: 720px;
+    margin: 0 auto;
+    background-color: var(--color-bg);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: var(--space-xl);
+}
+
+/* ============================================================
+   2. HEADER
+   ============================================================ */
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-xl);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.site-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+.site-nav {
+    display: flex;
+    gap: var(--space-md);
+    align-items: center;
+}
+
+.site-nav a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.site-nav a:hover {
+    color: var(--color-accent);
+}
+
+.inline-form {
+    display: inline;
+}
+
+.link-btn {
+    background: none;
+    border: none;
+    color: var(--color-text-muted);
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.2s ease;
+}
+
+.link-btn:hover {
+    color: var(--color-accent);
+}
+
+/* ============================================================
+   3. TITRES
+   ============================================================ */
+
+.page-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: var(--space-lg);
+}
+
+/* ============================================================
+   4. LISTE D'ARTICLES
+   ============================================================ */
+
+.article-list {
+    list-style: none;
+}
+
+.article-item {
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.article-item:last-child {
+    border-bottom: none;
+}
+
+.article-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md) 0;
+    text-decoration: none;
+    color: var(--color-text);
+    transition: color 0.2s ease;
+}
+
+.article-link:hover {
+    color: var(--color-accent);
+}
+
+.article-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.article-date {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+}
+
+/* ============================================================
+   5. ADMIN — LISTE
+   ============================================================ */
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-lg);
+}
+
+.admin-header .page-title {
+    margin-bottom: 0;
+}
+
+.admin-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md) 0;
+}
+
+.admin-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    flex: 1;
+}
+
+.admin-item-actions {
+    display: flex;
+    gap: var(--space-md);
+    align-items: center;
+}
+
+.action-link {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: color 0.2s ease;
+}
+
+.action-link:hover {
+    color: var(--color-accent);
+}
+
+.action-link-danger:hover {
+    color: var(--color-danger);
+}
+
+/* ============================================================
+   6. ARTICLE DETAIL
+   ============================================================ */
+
+.article-detail {
+    margin-bottom: var(--space-xl);
+}
+
+.article-detail-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+}
+
+.article-detail-date {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+    font-style: italic;
+}
+
+.article-detail-content {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--color-text);
+}
+
+/* ============================================================
+   7. FORMULAIRES
+   ============================================================ */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.field-label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-top: var(--space-md);
+}
+
+.field-input,
+.field-textarea {
+    width: 100%;
+    padding: 0.75rem var(--space-md);
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius);
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.field-textarea {
+    resize: vertical;
+    min-height: 180px;
+}
+
+.field-input:focus-visible,
+.field-textarea:focus-visible {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+/* ============================================================
+   8. BOUTONS
+   ============================================================ */
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem var(--space-lg);
+    margin-top: var(--space-lg);
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    border: 2px solid transparent;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-primary {
+    background-color: var(--color-btn);
+    color: white;
+    border-color: var(--color-btn);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-btn-hover);
+    border-color: var(--color-btn-hover);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-text);
+    border-color: var(--color-border);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-bg-page);
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.5);
+}
+
+/* ============================================================
+   9. DIVERS
+   ============================================================ */
+
+.empty {
+    text-align: center;
+    padding: var(--space-xl);
+    color: var(--color-text-muted);
+}
+
+.error {
+    padding: var(--space-md);
+    background-color: var(--color-error-bg);
+    color: var(--color-danger);
+    border-radius: var(--radius);
+    margin-bottom: var(--space-md);
+    font-weight: 500;
+}
+
+/* ============================================================
+   10. RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 480px) {
+    .page {
+        padding: var(--space-lg);
+    }
+
+    .page-title,
+    .article-detail-title {
+        font-size: 1.5rem;
+    }
+
+    .article-link {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-xs);
+    }
+
+    .admin-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

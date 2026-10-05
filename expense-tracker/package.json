@@ -1,0 +1,16 @@
+{
+    "name": "expense-tracker",
+    "version": "1.0.0",
+    "description": "Simple CLI to track expenses",
+    "main": "index.js",
+    "bin": {
+        "expense-tracker": "./index.js"
+    },
+    "type": "module",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "keywords": ["cli", "expense", "tracker"],
+    "author": "ADA",
+    "license": "MIT"
+}

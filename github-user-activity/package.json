@@ -1,0 +1,19 @@
+{
+    "name": "github-activity",
+    "version": "1.0.0",
+    "description": "Fetch and display GitHub user activity in the terminal",
+    "main": "index.js",
+    "bin": {
+        "github-activity": "./index.js"
+    },
+    "type": "module",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "keywords": ["cli", "github", "activity"],
+    "author": "TADJA",
+    "license": "MIT"
+}
