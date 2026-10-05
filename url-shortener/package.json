@@ -1,0 +1,14 @@
+{
+    "name": "url-shortener",
+    "version": "1.0.0",
+    "description": "A simple URL shortening API",
+    "main": "server.js",
+    "type": "module",
+    "scripts": {
+        "start": "node server.js",
+        "dev": "node --watch server.js"
+    },
+    "keywords": ["api", "rest", "url-shortener"],
+    "author": "ada",
+    "license": "MIT"
+}

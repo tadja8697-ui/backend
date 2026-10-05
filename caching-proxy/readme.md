@@ -143,3 +143,73 @@ if (args.stats) {
 }
 💡 Utile pour débugger : "Combien de choses sont cachées ? Ça prend combien de place ?"
 
+💡 Astuce de prof
+Ce projet est impressionnant en portfolio. Pourquoi ?
+
+Il touche à HTTP bas niveau (headers, status, body).
+
+Il montre une compréhension profonde du web.
+
+C'est exactement ce que font les CDN (Cloudflare, Fastly).
+
+Les 3 règles à graver :
+1. Clé = méthode + URL complète. Sinon /x et /X?y=1 seraient confondus.
+
+2. Filtrage des headers obligatoire. Les hop-by-hop ne se propagent pas.
+
+3. Content-Encoding à retirer. Sinon double décompression côté client.
+
+Le test mental ultime :
+Fais curl -i http://localhost:3000/products 2 fois.
+
+1ère : X-Cache: MISS, ~500ms.
+
+2e : X-Cache: HIT, ~5ms.
+
+Si la 2e prend 500ms → le cache ne marche pas.
+Si elle prend 5ms → tu as un vrai proxy. ✅
+
+Pour aller plus loin :
+RFC 7234 (HTTP Caching) : datatracker.ietf.org/doc/html/rfc7234
+
+RFC 7230 (HTTP/1.1 Message Syntax) : datatracker.ietf.org/doc/html/rfc7230
+
+Cloudflare cache docs : developers.cloudflare.com/cache
+
+Nginx proxy_cache : nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_cache
+
+Varnish Cache : varnish-cache.org
+
+Le pattern "Caching Proxy" :
+
+1. SERVEUR HTTP
+   http.createServer((req, res) => { ... })
+   server.listen(port)
+
+2. CLÉ DE CACHE
+   sha256(method + ":" + fullUrl)
+
+3. FLOW
+   if (!cacheable) → forward + X-Cache: BYPASS
+   if (cached && !expired) → return + X-Cache: HIT
+   else → forward + cache + X-Cache: MISS
+
+4. STOCKAGE (filesystem)
+   .caching-proxy-cache/<hash>.json
+   { statusCode, headers, body, timestamp, ttl }
+
+5. FILTRAGE DES HEADERS
+   Hop-by-hop : connection, host, transfer-encoding...
+   Response skip : content-encoding, content-length...
+
+6. SUIVI DES REDIRECTIONS
+   fetch(url, { redirect: 'manual' })
+
+RÈGLES D'OR :
+   - Clé = méthode + URL complète
+   - Filtrer les hop-by-hop headers
+   - NE PAS propager Content-Encoding (fetch décompresse)
+   - redirect: 'manual' pour un proxy
+   - Cacher uniquement GET/HEAD
+   - Filesystem → persistance entre invocations
+   - SIGINT → server.close() propre
